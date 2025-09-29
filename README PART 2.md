@@ -32,13 +32,13 @@ A responsive, multi-page website for **GreenSteps Community Gardens**, a non-pro
 ---
 
 ## Features
-- ✅ Fully responsive design for mobile, tablet, and desktop  
-- ✅ Sticky navigation header  
-- ✅ Interactive hover effects and animations  
-- ✅ Accessible form with validation  
-- ✅ CSS custom properties (variables) for consistent theming  
-- ✅ Modern card-based layouts  
-- ✅ Smooth scrolling and transitions  
+-  Fully responsive design for mobile, tablet, and desktop  
+-  Sticky navigation header  
+-  Interactive hover effects and animations  
+-  Accessible form with validation  
+-  CSS custom properties (variables) for consistent theming  
+-  Modern card-based layouts  
+-  Smooth scrolling and transitions  
 
 ---
 
@@ -126,15 +126,15 @@ project-root/
 ---
 
 ## CSS Implementation Checklist
-- ✅ External stylesheet created  
-- ✅ CSS Reset applied  
-- ✅ Typography styles defined  
-- ✅ Grid & Flexbox layouts  
-- ✅ CSS variables for theming  
-- ✅ Pseudo-classes for interactivity  
-- ✅ Media queries (tablet & mobile)  
-- ✅ Responsive navigation & typography  
-- ✅ Responsive images and layouts  
+-  External stylesheet created  
+-  CSS Reset applied  
+-  Typography styles defined  
+-  Grid & Flexbox layouts  
+-  CSS variables for theming  
+-  Pseudo-classes for interactivity  
+-  Media queries (tablet & mobile)  
+-  Responsive navigation & typography  
+-  Responsive images and layouts  
 
 ---
 
