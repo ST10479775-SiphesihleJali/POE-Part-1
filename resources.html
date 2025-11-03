@@ -1,34 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Code Attribution
-    Author: John Doe
-    Title: Html Introduction
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-introduction/
-    Date accessed: 2025-08-25
-    -->
-
+  <!-- SEO Meta Tags -->
   <meta charset="UTF-8">
-  <!-- Encoding ensures proper text rendering -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenSteps | Resources</title>
+  <meta name="description" content="Free gardening resources including planting calendars, video tutorials, templates, and tools for South African community gardens. Download guides and access expert tips.">
+  <meta name="keywords" content="gardening resources South Africa, planting calendar, gardening guides, community garden tools, sustainable farming tips, organic gardening tutorials">
+  <title>Gardening Resources & Guides | GreenSteps Community Gardens</title>
   <link rel="stylesheet" href="css-assets/style.css">
+  <style>
+    /* Search Bar Styles */
+    .search-container {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    #searchInput {
+      width: 100%;
+      max-width: 600px;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border: 2px solid #4a7c59;
+      border-radius: 50px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    #searchResults {
+      margin-top: 1rem;
+      color: #666;
+      font-style: italic;
+    }
+    
+    /* Accordion Styles */
+    .accordion {
+      margin: 2rem 0;
+    }
+    
+    .accordion-item {
+      margin-bottom: 1rem;
+      border: 2px solid #8fbc8f;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .accordion-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .accordion-header {
+      background: linear-gradient(135deg, #4a7c59, #8fbc8f);
+      color: white;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    
+    .accordion-header:hover {
+      background: linear-gradient(135deg, #2d5016, #4a7c59);
+    }
+    
+    .accordion-header .icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .accordion-item.active .accordion-header .icon {
+      transform: rotate(180deg);
+    }
+    
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background-color: #faf8f3;
+    }
+    
+    .accordion-item.active .accordion-content {
+      max-height: 1000px;
+      padding: 1.5rem;
+    }
+    
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .lightbox.active {
+      display: flex;
+    }
+    
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoomIn 0.3s ease;
+    }
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+    
+    .lightbox-caption {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      color: white;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+      transition: transform 0.2s ease;
+    }
+    
+    .lightbox-close:hover {
+      transform: scale(1.2);
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+    
+    .lightbox-nav:hover {
+      transform: translateY(-50%) scale(1.2);
+    }
+    
+    .lightbox-prev {
+      left: 20px;
+    }
+    
+    .lightbox-next {
+      right: 20px;
+    }
+    
+    /* Resource Cards */
+    .resource-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .resource-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .resource-card h3 {
+      margin-bottom: 1rem;
+      color: #2d5016;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #4a7c59;
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background-color: #2d5016;
+      transform: scale(1.05);
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .lightbox-nav {
+        font-size: 2rem;
+      }
+      
+      .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ================== HEADER ================== -->
   <header>
     <h1>GreenSteps Community Gardens</h1>
-
-    <!--Code Attribution
-    Author: John Doe
-    Title: Understanding HTML Navigation
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-nav-tag/
-    Date accessed: 2025-08-25
-    -->
-
-    <!-- Navigation menu for site structure -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -44,50 +303,373 @@
 
   <!-- ================== MAIN CONTENT ================== -->
   <main>
-<section id="resources">
-            <h2>Resources</h2>
-            
-            <div>
-
-                 <!-- ===== Resource 1 ===== -->
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0083/4602/files/fall_2019_planting_chart_2048x2048.png?v=1563656845" alt="Seasonal planting calendar and gardening guides laid out on table" width="300" height="200">
-                    <h3>Planting Calendars</h3>
-                    <p>Regional planting guides for optimal crop timing across South Africa's climate zones.</p>
-                </div>
-
-                <!-- ===== Resource 2 ===== -->
-                <div>
-                <!-- Replace VIDEO_ID with the actual YouTube video ID -->
-                <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/n11dV0xD-Kc" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-                </iframe>
-                    <p>Step-by-step video guides for garden setup, maintenance, and harvesting techniques.</p>
-                </div>
-
-                <!-- ===== Resource 3 ===== -->
-                <div>
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.4zlLWBg3we59iE-RWH6VrQHaJl?cb=thfc1&w=1187&h=1536&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Garden planning templates and worksheets" width="300" height="200">
-                    <h3>Garden Planning Templates</h3>
-                    <p>Downloadable templates for garden layout planning, crop rotation schedules, and harvest tracking.</p>
-                </div>
-
-                <!-- ===== Resource 4 ===== -->
-                <div>
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.zXoUM8g_FwydVouwYCMENAHaEJ?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Various gardening tools arranged for lending library" width="300" height="200">
-                    <h3>Tool Library</h3>
-                    <p>Essential gardening tools available for loan to registered community gardens.</p>
-                </div>
-            </div>
-        </section>
+    <section id="resources">
+      <h2>📚 Gardening Resources & Tools</h2>
+      <p>Access free guides, tutorials, and tools to help your community garden thrive.</p>
+      
+      <!-- Search Feature -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Search resources..." aria-label="Search resources">
+        <div id="searchResults"></div>
+      </div>
+      
+      <!-- Accordion Section: FAQs -->
+      <h3>❓ Frequently Asked Questions</h3>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How do I start a community garden?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>Starting a community garden involves several key steps:</p>
+            <ol>
+              <li><strong>Gather community interest:</strong> Form a planning committee of 5-10 interested members</li>
+              <li><strong>Find suitable land:</strong> Approach your local municipality about unused public land</li>
+              <li><strong>Conduct soil testing:</strong> Contact GreenSteps for free soil testing services</li>
+              <li><strong>Secure funding:</strong> Apply for our Seed Grant program (up to R10,000)</li>
+              <li><strong>Attend training:</strong> Join our weekend workshops for hands-on setup guidance</li>
+            </ol>
+            <p>Contact us at <a href="mailto:info@greensteps.org.za">info@greensteps.org.za</a> to schedule a consultation!</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What vegetables grow best in South Africa?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p><strong>Year-round vegetables:</strong> Spinach, Swiss chard, kale, lettuce</p>
+            <p><strong>Summer crops (Oct-Feb):</strong> Tomatoes, peppers, beans, squash, cucumber</p>
+            <p><strong>Winter crops (Apr-Aug):</strong> Broccoli, cauliflower, cabbage, peas, carrots</p>
+            <p><strong>Herbs:</strong> Basil (summer), parsley, coriander, rosemary (year-round)</p>
+            <p>Download our detailed planting calendar below for specific timing by province!</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How much water do vegetables need?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>Most vegetables need <strong>2-3cm of water per week</strong>, either from rainfall or irrigation.</p>
+            <p><strong>Water-wise tips:</strong></p>
+            <ul>
+              <li>Water early morning or late afternoon to reduce evaporation</li>
+              <li>Use drip irrigation or soaker hoses for 50% water savings</li>
+              <li>Apply mulch (5-10cm thick) to retain soil moisture</li>
+              <li>Group plants by water needs</li>
+              <li>Install rainwater harvesting tanks (we can help!)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How do I manage pests organically?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p><strong>Organic pest control methods:</strong></p>
+            <ul>
+              <li><strong>Companion planting:</strong> Marigolds deter aphids; nasturtiums attract aphids away from crops</li>
+              <li><strong>Neem oil spray:</strong> Effective against most soft-bodied insects</li>
+              <li><strong>Soap spray:</strong> Mix 2 tablespoons dish soap per liter of water</li>
+              <li><strong>Hand-picking:</strong> Remove larger pests like caterpillars by hand</li>
+              <li><strong>Beneficial insects:</strong> Attract ladybugs and lacewings with flowering herbs</li>
+            </ul>
+            <p>Join our pest management workshop to learn hands-on techniques!</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gallery with Lightbox -->
+      <h3 style="margin-top: 3rem;">📸 Garden Gallery</h3>
+      <p>Click any image to view in full size</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-index="0">
+          <img src="https://cdn.shopify.com/s/files/1/0083/4602/files/fall_2019_planting_chart_2048x2048.png?v=1563656845" alt="seasonal-planting-calendar-south-africa.png">
+          <div class="gallery-caption">
+            <h4>Seasonal Planting Calendar</h4>
+            <p>Know when to plant for best results</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-index="1">
+          <img src="https://img.freepik.com/premium-photo/closeup-farmers-hands-planting-seeds-rich-soil-rows-crops-visible-focusing-con_176550-2128.jpg" alt="hands-planting-seeds-organic-garden.jpg">
+          <div class="gallery-caption">
+            <h4>Seed Planting Technique</h4>
+            <p>Proper depth and spacing matters</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-index="2">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.RzrMKh_Dx4aMYuHCtb95pQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="community-composting-workshop-training.jpg">
+          <div class="gallery-caption">
+            <h4>Composting Workshop</h4>
+            <p>Turn waste into garden gold</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-index="3">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.1-ZUMdUD_RD7V6FHjt1OYwHaEJ?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="rainwater-harvesting-system-garden.jpg">
+          <div class="gallery-caption">
+            <h4>Rainwater Harvesting</h4>
+            <p>Sustainable water solutions</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-index="4">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.nu-1pgEKwsmBtobJZVjXRQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="school-children-learning-vegetable-garden.jpg">
+          <div class="gallery-caption">
+            <h4>School Garden Education</h4>
+            <p>Teaching the next generation</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-index="5">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.zXoUM8g_FwydVouwYCMENAHaEJ?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="garden-tools-equipment-library.jpg">
+          <div class="gallery-caption">
+            <h4>Tool Library</h4>
+            <p>Shared resources for all</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Downloadable Resources -->
+      <h3 style="margin-top: 3rem;">📥 Downloadable Resources</h3>
+      <div class="resource-cards">
+        <div class="resource-card">
+          <h3>🌱 Planting Calendars</h3>
+          <p>Regional planting guides optimized for South Africa's diverse climate zones. Includes optimal planting dates, companion planting suggestions, and harvest timelines.</p>
+          <a href="#" class="download-btn">📄 Download PDF (2.3 MB)</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>📋 Garden Planning Templates</h3>
+          <p>Downloadable templates for garden layout planning, crop rotation schedules, harvest tracking, and budget worksheets. Available in Excel and PDF formats.</p>
+          <a href="#" class="download-btn">📊 Download Templates</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>🎥 Video Tutorial Series</h3>
+          <p>Step-by-step video guides covering garden setup, irrigation installation, composting techniques, and seasonal maintenance tips.</p>
+          <a href="https://www.youtube.com/watch?v=n11dV0xD-Kc" target="_blank" class="download-btn">▶️ Watch Videos</a>
+        </div>
+        
+        <div class="resource-card">
+          <h3>🔧 Tool Library Catalog</h3>
+          <p>Browse our collection of gardening tools, equipment, and supplies available for loan to registered community gardens. Includes booking information.</p>
+          <a href="#" class="download-btn">📚 View Catalog</a>
+        </div>
+      </div>
+      
+      <!-- Embedded Video Tutorial -->
+      <h3 style="margin-top: 3rem;">🎬 Featured Tutorial: Starting Your Garden</h3>
+      <div style="max-width: 800px; margin: 2rem auto;">
+        <iframe 
+          width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/n11dV0xD-Kc" 
+          title="Starting a community garden tutorial" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </iframe>
+        <p style="text-align: center; margin-top: 1rem; color: #666;">
+          A comprehensive guide to establishing your first community garden
+        </p>
+      </div>
+    </section>
   </main>
 
-    <!-- ================== FOOTER ================== -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="closeLightbox">&times;</span>
+    <span class="lightbox-nav lightbox-prev" id="prevImage">&#10094;</span>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <span class="lightbox-nav lightbox-next" id="nextImage">&#10095;</span>
+  </div>
+
+  <!-- ================== FOOTER ================== -->
   <footer>
     <p>&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
+    <p>Non-Profit Registration: NPO 123-456 | PBO 930012345</p>
   </footer>
+
+  <!-- ================== JAVASCRIPT ================== -->
+  <script>
+    // ===== ACCORDION FUNCTIONALITY =====
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        const accordionItem = this.parentElement;
+        const isActive = accordionItem.classList.contains('active');
+        
+        // Close all accordion items
+        document.querySelectorAll('.accordion-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          accordionItem.classList.add('active');
+        }
+      });
+    });
+    
+    // ===== LIGHTBOX GALLERY FUNCTIONALITY =====
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const prevImage = document.getElementById('prevImage');
+    const nextImage = document.getElementById('nextImage');
+    
+    let currentImageIndex = 0;
+    const images = [];
+    
+    // Collect all images
+    galleryItems.forEach((item, index) => {
+      const img = item.querySelector('img');
+      const caption = item.querySelector('.gallery-caption h4').textContent;
+      const description = item.querySelector('.gallery-caption p').textContent;
+      
+      images.push({
+        src: img.src,
+        alt: img.alt,
+        caption: caption,
+        description: description
+      });
+      
+      // Add click event to open lightbox
+      item.addEventListener('click', function() {
+        openLightbox(index);
+      });
+    });
+    
+    function openLightbox(index) {
+      currentImageIndex = index;
+      updateLightboxImage();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function closeLightboxFunc() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    function updateLightboxImage() {
+      const image = images[currentImageIndex];
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.innerHTML = `<strong>${image.caption}</strong><br>${image.description}`;
+    }
+    
+    function showPreviousImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateLightboxImage();
+    }
+    
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateLightboxImage();
+    }
+    
+    // Event listeners for lightbox
+    closeLightbox.addEventListener('click', closeLightboxFunc);
+    prevImage.addEventListener('click', showPreviousImage);
+    nextImage.addEventListener('click', showNextImage);
+    
+    // Close lightbox when clicking outside image
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightboxFunc();
+      }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') closeLightboxFunc();
+      if (e.key === 'ArrowLeft') showPreviousImage();
+      if (e.key === 'ArrowRight') showNextImage();
+    });
+    
+    // ===== SEARCH FUNCTIONALITY =====
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    
+    // Create searchable content index
+    const searchableContent = [
+      { title: 'Planting Calendar', keywords: ['plant', 'calendar', 'season', 'timing', 'schedule'], element: '.resource-card:nth-child(1)' },
+      { title: 'Garden Planning Templates', keywords: ['template', 'planning', 'layout', 'design', 'organization'], element: '.resource-card:nth-child(2)' },
+      { title: 'Video Tutorials', keywords: ['video', 'tutorial', 'guide', 'learning', 'instruction'], element: '.resource-card:nth-child(3)' },
+      { title: 'Tool Library', keywords: ['tool', 'equipment', 'library', 'borrow', 'resources'], element: '.resource-card:nth-child(4)' },
+      { title: 'Starting a Garden', keywords: ['start', 'begin', 'new', 'setup', 'establish'], element: '.accordion-item:nth-child(1)' },
+      { title: 'Best Vegetables', keywords: ['vegetable', 'crop', 'grow', 'plant', 'harvest'], element: '.accordion-item:nth-child(2)' },
+      { title: 'Watering Guide', keywords: ['water', 'irrigation', 'moisture', 'rainfall'], element: '.accordion-item:nth-child(3)' },
+      { title: 'Pest Control', keywords: ['pest', 'insect', 'organic', 'control', 'management'], element: '.accordion-item:nth-child(4)' },
+      { title: 'Composting', keywords: ['compost', 'waste', 'organic', 'soil'], element: '.gallery-item:nth-child(3)' },
+      { title: 'Rainwater Harvesting', keywords: ['rainwater', 'water', 'harvest', 'tank', 'conservation'], element: '.gallery-item:nth-child(4)' }
+    ];
+    
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      
+      // Clear all highlights
+      document.querySelectorAll('.resource-card, .accordion-item, .gallery-item').forEach(el => {
+        el.classList.remove('hidden');
+        el.style.border = '';
+      });
+      
+      if (searchTerm === '') {
+        searchResults.textContent = '';
+        return;
+      }
+      
+      // Search through content
+      const matches = searchableContent.filter(item => {
+        return item.title.toLowerCase().includes(searchTerm) ||
+               item.keywords.some(keyword => keyword.includes(searchTerm));
+      });
+      
+      if (matches.length > 0) {
+        searchResults.textContent = `Found ${matches.length} result${matches.length > 1 ? 's' : ''} for "${searchTerm}"`;
+        
+        // Highlight matching elements
+        matches.forEach(match => {
+          const element = document.querySelector(match.element);
+          if (element) {
+            element.style.border = '3px solid #d4a574';
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+        
+        // Hide non-matching items
+        searchableContent.forEach(item => {
+          if (!matches.includes(item)) {
+            const element = document.querySelector(item.element);
+            if (element && (element.classList.contains('resource-card') || 
+                           element.classList.contains('gallery-item'))) {
+              element.classList.add('hidden');
+            }
+          }
+        });
+      } else {
+        searchResults.textContent = `No results found for "${searchTerm}". Try different keywords.`;
+      }
+    });
+  </script>
 </body>
 </html>

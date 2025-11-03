@@ -1,34 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Code Attribution
-    Author: John Doe
-    Title: Html Introduction
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-introduction/
-    Date accessed: 2025-08-25
-    -->
-
   <meta charset="UTF-8">
-  <!-- Ensures proper text rendering across browsers -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenSteps | Contact</title>
-  <link rel="stylesheet" href="css-assets/style.css">
+  
+  <!-- SEO: Title Tag -->
+  <title>Contact Us - GreenSteps Community Gardens | Get in Touch</title>
+  
+  <!-- SEO: Meta Keywords -->
+  <meta name="keywords" content="community gardens Cape Town, sustainable agriculture South Africa, contact GreenSteps, volunteer gardening, urban farming contact, garden training workshops">
+  
+  <!-- SEO: Meta Description -->
+  <meta name="description" content="Contact GreenSteps Community Gardens in Cape Town. Get in touch to volunteer, partner with us, or learn about our sustainable urban farming programs across South Africa.">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f0;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    h2 {
+      color: #2d5016;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-form, .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h3 {
+      color: #2d5016;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #4a7c2c;
+    }
+    
+    input.error, select.error, textarea.error {
+      border-color: #d32f2f;
+    }
+    
+    .error-message {
+      color: #d32f2f;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    
+    button {
+      background: #4a7c2c;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    
+    button:hover {
+      background: #2d5016;
+    }
+    
+    .success-message {
+      background: #4caf50;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    
+    .map-container {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 5px;
+    }
+    
+    .contact-info img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .info-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .info-section p {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Accordion Styles */
+    .accordion {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 1rem;
+    }
+    
+    .accordion-header {
+      background: #f5f5f0;
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    
+    .accordion-header:hover {
+      background: #e8e8e0;
+    }
+    
+    .accordion-header h4 {
+      color: #2d5016;
+      margin: 0;
+    }
+    
+    .accordion-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+    
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 1rem;
+    }
+    
+    .accordion-content.active {
+      max-height: 500px;
+      padding: 1rem;
+    }
+    
+    footer {
+      background: #2d5016;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- ================== HEADER ================== -->
   <header>
     <h1>GreenSteps Community Gardens</h1>
-
-    <!--Code Attribution
-    Author: John Doe
-    Title: Understanding HTML Navigation
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-nav-tag/
-    Date accessed: 2025-08-25
-    -->
-
-    <!-- Navigation bar: active state shows user where they are -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -42,90 +274,310 @@
     </nav>
   </header>
 
-  <!-- ================== MAIN CONTENT ================== -->
   <main>
-            <section id="contact">
-            <h2>Contact Us</h2>
-            
-            <div>
-                <div>
-                    <img src="https://th.bing.com/th/id/R.ca1f598f3f509b3ab016672a4589b266?rik=AhwpIqPDmsrmHg&riu=http%3a%2f%2ftoursmaps.com%2fwp-content%2fuploads%2f2017%2f10%2fcape-town-map_9.gif&ehk=wc8WYc65NQrlyEqZHE9T2jcKZjsRThULI5TjuRHrwdw%3d&risl=&pid=ImgRaw&r=0" alt="Map of Cape Town" width="500" height="300">
-                    
-
-                    <!-- ===== Contact Form ===== -->
-                    <!-- Forms allow users to send inquiries directly -->
-                    <!-- "required" attribute enforces input validation in the browser -->
-                    <h3>Contact Us</h3>
-                    <form>
-                        <div>
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div>
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div>
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Please select...</option>
-                                <option value="volunteer">Volunteer Opportunities</option>
-                                <option value="partnership">Partnership Inquiry</option>
-                                <option value="donation">Donation Information</option>
-                                <option value="training">Training Request</option>
-                                <option value="general">General Inquiry</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
-                        </div>
-
-                         <!-- Submit button sends the form -->
-                        <button type="submit">📧 Send Message</button>
-                    </form>
-                </div>
-                
-                <div>
-                    <!-- ===== Contact Info Section ===== -->
-                    <h3>Contact Information</h3>
-                    
-                    <img src="https://cdn.pixabay.com/photo/2015/07/08/20/12/table-mountain-836847_1280.jpg" alt="Cape Town city view with Table Mountain in background" width="400" height="250">
-                    
-                    <div>
-                        <p><strong>Head Office</strong></p>
-                        <p>123 Garden Street, Observatory<br>
-                        Cape Town, 7925<br>
-                        South Africa</p>
-                    </div>
-                    
-                    <div>
-                        <p><strong>Phone:</strong> +27 (0)21 448 7890</p>
-                        <p><strong>Email:</strong> info@greensteps.org.za</p>
-                    </div>
-                    
-                    <div>
-                        <p><strong>Office Hours:</strong></p>
-                        <p>Monday - Friday: 8:00 AM - 4:30 PM<br>
-                        Saturday: 9:00 AM - 1:00 PM</p>
-                    </div>
-                    
-                    <h4>Regional Offices</h4>
-                    <p><strong>Johannesburg:</strong> +27 (0)11 234 5678<br>
-                    <strong>Durban:</strong> +27 (0)31 345 6789<br>
-                    <strong>Bloemfontein:</strong> +27 (0)51 456 7890</p>
-                </div>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      
+      <!-- Interactive Map -->
+      <div class="map-container">
+        <h3>Find Us</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d848877.9562127013!2d18.728574149153108!3d-33.78831826493065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1761037038421!5m2!1sen!2sza" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      
+      <div class="contact-container">
+        <!-- Contact Form with Validation -->
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <div id="successMessage" class="success-message">
+            ✓ Message sent successfully! We'll get back to you soon.
+          </div>
+          
+          <form id="contactForm" action="mailto:info@greensteps.org.za" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+              <span class="error-message" id="nameError">Please enter your full name</span>
             </div>
-        </section>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-message" id="emailError">Please enter a valid email address</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" pattern="[0-9+\-\s()]+">
+              <span class="error-message" id="phoneError">Please enter a valid phone number</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Please select...</option>
+                <option value="volunteer">Volunteer Opportunities</option>
+                <option value="partnership">Partnership Inquiry</option>
+                <option value="donation">Donation Information</option>
+                <option value="training">Training Request</option>
+                <option value="general">General Inquiry</option>
+              </select>
+              <span class="error-message" id="subjectError">Please select a subject</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+              <span class="error-message" id="messageError">Please enter your message</span>
+            </div>
+
+            <button type="submit">📧 Send Message</button>
+            <button type="button" id="clearBtn" style="background: #999; margin-top: 0.5rem;">Clear Form</button>
+          </form>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          
+          <!-- SEO: Image with descriptive filename and alt text -->
+          <img src="https://cdn.pixabay.com/photo/2015/07/08/20/12/table-mountain-836847_1280.jpg" 
+               alt="cape-town-table-mountain-city-view-greensteps-office-location">
+          
+          <div class="info-section">
+            <p><strong>Head Office</strong></p>
+            <p>123 Garden Street, Observatory<br>
+            Cape Town, 7925<br>
+            South Africa</p>
+          </div>
+          
+          <div class="info-section">
+            <p><strong>Phone:</strong> +27 (0)21 448 7890</p>
+            <p><strong>Email:</strong> info@greensteps.org.za</p>
+          </div>
+          
+          <div class="info-section">
+            <p><strong>Office Hours:</strong></p>
+            <p>Monday - Friday: 8:00 AM - 4:30 PM<br>
+            Saturday: 9:00 AM - 1:00 PM<br>
+            Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive Accordion - FAQ Section -->
+      <div class="accordion">
+        <h3>Frequently Asked Questions</h3>
+        
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h4>How do I start a community garden in my area?</h4>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Starting a community garden involves several steps: First, identify suitable land and get permission from the landowner or municipality. Then, gather interested community members and contact us for a site assessment. We provide free consultations, help with soil testing, and offer starter kits for new gardens. Our team will guide you through garden layout, irrigation setup, and initial planting.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h4>What training programs do you offer?</h4>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>We offer monthly workshops covering organic farming techniques, composting, pest management, water conservation, and seasonal planting. All training is conducted in English, Afrikaans, isiXhosa, and isiZulu by certified instructors. We also provide specialized training for school garden programs and advanced courses for experienced gardeners.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h4>Can schools partner with GreenSteps?</h4>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes! Our School Garden Program helps educational institutions establish gardens that serve as outdoor classrooms. We provide curriculum-aligned learning materials, teacher training, and ongoing support. Gardens can supply school feeding schemes while teaching children about nutrition, science, and environmental stewardship.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h4>What are the regional office locations?</h4>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p><strong>Johannesburg:</strong> +27 (0)11 234 5678 - 45 Garden Ave, Braamfontein<br>
+            <strong>Durban:</strong> +27 (0)31 345 6789 - 78 Urban Farm Rd, Glenwood<br>
+            <strong>Bloemfontein:</strong> +27 (0)51 456 7890 - 12 Green Street, Westdene<br>
+            All regional offices operate Monday-Friday, 9:00 AM - 4:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-    <!-- ================== FOOTER ================== -->
   <footer>
     <p>&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
+    <p>Non-Profit Registration: NPO 123-456 | PBO 930012345</p>
   </footer>
+
+  <script>
+    // Form Validation and Processing
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const clearBtn = document.getElementById('clearBtn');
+    
+    // Form field elements
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const subjectSelect = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+    
+    // Error message elements
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const subjectError = document.getElementById('subjectError');
+    const messageError = document.getElementById('messageError');
+    
+    // Validation functions
+    function validateName() {
+      if (nameInput.value.trim().length < 2) {
+        nameInput.classList.add('error');
+        nameError.style.display = 'block';
+        return false;
+      }
+      nameInput.classList.remove('error');
+      nameError.style.display = 'none';
+      return true;
+    }
+    
+    function validateEmail() {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailInput.classList.add('error');
+        emailError.style.display = 'block';
+        return false;
+      }
+      emailInput.classList.remove('error');
+      emailError.style.display = 'none';
+      return true;
+    }
+    
+    function validatePhone() {
+      if (phoneInput.value && phoneInput.value.trim().length > 0) {
+        const phonePattern = /^[0-9+\-\s()]{10,}$/;
+        if (!phonePattern.test(phoneInput.value)) {
+          phoneInput.classList.add('error');
+          phoneError.style.display = 'block';
+          return false;
+        }
+      }
+      phoneInput.classList.remove('error');
+      phoneError.style.display = 'none';
+      return true;
+    }
+    
+    function validateSubject() {
+      if (subjectSelect.value === '') {
+        subjectSelect.classList.add('error');
+        subjectError.style.display = 'block';
+        return false;
+      }
+      subjectSelect.classList.remove('error');
+      subjectError.style.display = 'none';
+      return true;
+    }
+    
+    function validateMessage() {
+      if (messageInput.value.trim().length < 10) {
+        messageInput.classList.add('error');
+        messageError.textContent = 'Message must be at least 10 characters';
+        messageError.style.display = 'block';
+        return false;
+      }
+      messageInput.classList.remove('error');
+      messageError.style.display = 'none';
+      return true;
+    }
+    
+    // Real-time validation
+    nameInput.addEventListener('blur', validateName);
+    emailInput.addEventListener('blur', validateEmail);
+    phoneInput.addEventListener('blur', validatePhone);
+    subjectSelect.addEventListener('change', validateSubject);
+    messageInput.addEventListener('blur', validateMessage);
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validate all fields
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isPhoneValid = validatePhone();
+      const isSubjectValid = validateSubject();
+      const isMessageValid = validateMessage();
+      
+      if (isNameValid && isEmailValid && isPhoneValid && isSubjectValid && isMessageValid) {
+        // Show success message
+        successMessage.style.display = 'block';
+        
+        // Simulate email sending (in production, this would be handled by backend)
+        console.log('Form submitted:', {
+          name: nameInput.value,
+          email: emailInput.value,
+          phone: phoneInput.value,
+          subject: subjectSelect.value,
+          message: messageInput.value
+        });
+        
+        // Clear form after 2 seconds
+        setTimeout(() => {
+          form.reset();
+          successMessage.style.display = 'none';
+        }, 3000);
+        
+        // Optional: Uncomment to actually trigger mailto
+        // window.location.href = `mailto:info@greensteps.org.za?subject=${subjectSelect.value}&body=${messageInput.value}`;
+      } else {
+        // Scroll to first error
+        const firstError = document.querySelector('.error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    });
+    
+    // Clear button functionality
+    clearBtn.addEventListener('click', function() {
+      form.reset();
+      document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+      document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+      successMessage.style.display = 'none';
+    });
+    
+    // Accordion functionality
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+      
+      // Close all other accordions
+      document.querySelectorAll('.accordion-content').forEach(item => {
+        if (item !== content) {
+          item.classList.remove('active');
+          item.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+        }
+      });
+      
+      // Toggle current accordion
+      content.classList.toggle('active');
+      icon.textContent = content.classList.contains('active') ? '−' : '+';
+    }
+  </script>
 </body>
 </html>
