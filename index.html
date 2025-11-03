@@ -1,164 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Code Attribution
+  <!--Code Attribution
     Author: John Doe
     Title: Html Introduction
     Date Published: 2025-07-28
     Link/URL: https://www.geeksforgeeks.org/html/html-introduction/
     Date accessed: 2025-08-25
-    -->
-    
+  -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="GreenSteps Community Gardens empowers South African communities through sustainable urban farming, food security programs, and environmental education since 2015. Join our mission in Cape Town, Johannesburg, and Durban.">
-  <meta name="keywords" content="community gardens, urban farming South Africa, sustainable agriculture, food security, Cape Town gardens, environmental education, organic farming, community development, GreenSteps">
+  <title>GreenSteps Community Gardens | Home</title>
+  <link rel="stylesheet" href="css-assets/style.css">
+
+  <!-- SEO -->
+  <meta name="description" content="Welcome to GreenSteps Community Gardens — empowering South African communities through sustainable food production, education, and environmental stewardship.">
+  <meta name="keywords" content="GreenSteps, community gardens, sustainability, South Africa, environment, nonprofit, urban farming, gardening, food security">
   <meta name="author" content="GreenSteps Community Gardens">
   <meta name="robots" content="index, follow">
-  
-  <!-- Open Graph Meta Tags for Social Sharing -->
   <meta property="og:title" content="GreenSteps Community Gardens - Growing Communities, Harvesting Hope">
-  <meta property="og:description" content="Empowering South African communities through sustainable food production and environmental stewardship.">
+  <meta property="og:description" content="Empowering South African communities through sustainable food production, environmental stewardship, and education.">
+  <meta property="og:image" content="https://plus.unsplash.com/premium_photo-1663091289178-0e5f5dda974d?q=80&w=870&auto=format&fit=crop">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.greensteps.org.za">
-  
-  <title>GreenSteps Community Gardens - Sustainable Urban Farming South Africa | Home</title>
-  <link rel="stylesheet" href="css-assets/style.css">
 </head>
+
 <body>
-    <!--Code Attribution
-    Author: John Doe
-    Title: Understanding HTML Navigation
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-nav-tag/
-    Date accessed: 2025-08-25
-    -->
-    
-  <!-- ================== HEADER & NAVIGATION ================== -->
+  <!-- ================== HEADER ================== -->
   <header>
-    <h1>🌱 GreenSteps Community Gardens</h1>
+    <div class="header-inner">
+      <div class="brand"><h1>GreenSteps Community Gardens</h1></div>
 
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="impact.html">Impact Stories</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Impact Stories</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+      <div class="header-search">
+        <input id="searchInput" type="search" placeholder="Search site (e.g., volunteer, donation)" aria-label="Search site">
+      </div>
+    </div>
   </header>
 
   <!-- ================== MAIN CONTENT ================== -->
   <main>
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero container" data-searchable>
       <h2>Growing Communities, Harvesting Hope</h2>
       <p>Empowering South African communities through sustainable food production, environmental stewardship, and education since 2015.</p>
 
-      <!-- Hero Image with optimized alt text -->
-      <img src="https://plus.unsplash.com/premium_photo-1663091289178-0e5f5dda974d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-           alt="Diverse community members working together harvesting fresh vegetables in urban community garden Cape Town" 
-           width="800" 
-           height="400"
-           loading="lazy">
-        
-      <!-- Call-to-action buttons -->
-      <div class="cta-buttons">
-        <a href="contact.html" class="cta-primary">🍃 Donate Now</a>
-        <a href="contact.html" class="cta-secondary">🤝 Volunteer</a>
-      </div>
+      <img src="https://plus.unsplash.com/premium_photo-1663091289178-0e5f5dda974d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0"
+           alt="Community members working together in a lush vegetable garden in Cape Town"
+           width="800" height="400">
 
-      <!-- Quick Stats Counter (Interactive) -->
-      <div class="quick-stats">
-        <div class="stat-box">
-          <span class="stat-number" data-target="50">0</span>
-          <span class="stat-label">Gardens</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="1000">0</span>
-          <span class="stat-label">Families</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="500">0</span>
-          <span class="stat-label">Volunteers</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="9">0</span>
-          <span class="stat-label">Provinces</span>
-        </div>
+      <div class="cta-buttons">
+        <a class="cta-primary" href="contact.html">🍃 Donate Now</a>
+        <a class="cta-secondary" href="contact.html">🤝 Volunteer</a>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-      <h2>Why Choose GreenSteps?</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">🌾</span>
-          <h3>Sustainable Practices</h3>
-          <p>Organic farming methods that protect the environment and produce healthy food.</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">👥</span>
-          <h3>Community Building</h3>
-          <p>Bringing neighbors together to create stronger, more resilient communities.</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">📚</span>
-          <h3>Education & Training</h3>
-          <p>Free workshops and resources to help communities succeed in urban farming.</p>
-        </div>
-        <div class="feature-card">
-          <span class="feature-icon">💚</span>
-          <h3>Food Security</h3>
-          <p>Providing access to fresh, nutritious vegetables for families in need.</p>
-        </div>
-      </div>
+    <!-- Program Highlights -->
+    <section class="container card-grid" data-searchable>
+      <article class="card">
+        <img src="https://img.freepik.com/premium-photo/closeup-farmers-hands-planting-seeds-rich-soil-rows-crops-visible-focusing-con_176550-2128.jpg"
+             alt="Hands planting seeds in rich soil" width="400" height="300">
+        <h3>Garden Establishment</h3>
+        <p>We help communities identify suitable land, conduct soil tests, and establish productive gardens from the ground up. Our team provides site preparation, irrigation setup, and initial planting guidance.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.RzrMKh_Dx4aMYuHCtb95pQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Instructor teaching composting techniques to community members" width="400" height="300">
+        <h3>Skills Training Workshops</h3>
+        <p>Monthly workshops covering composting, pest management, seasonal planting, and harvesting techniques. All training is conducted in local languages by certified instructors.</p>
+      </article>
+
+      <article class="card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.nu-1pgEKwsmBtobJZVjXRQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Children learning about vegetables in school garden" width="400" height="300">
+        <h3>School Garden Program</h3>
+        <p>Educational gardens in schools teach children about nutrition, environmental science, and food production while providing fresh vegetables for school feeding schemes.</p>
+      </article>
     </section>
   </main>
 
   <!-- ================== FOOTER ================== -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="programs.html">Our Programs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Connect With Us</h4>
-        <p>📧 info@greensteps.org.za</p>
-        <p>📞 +27 (0)21 448 7890</p>
-      </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Twitter">TW</a>
-          <a href="#" aria-label="Instagram">IG</a>
-        </div>
-      </div>
-    </div>
-    <p class="copyright">&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
-    <p class="registration">Non-Profit Registration: NPO 123-456 | PBO 930012345</p>
+    <p>&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for interactive features -->
-  <script src="js/script.js"></script>
+  <script src="js-assets/scripts.js"></script>
 </body>
 </html>

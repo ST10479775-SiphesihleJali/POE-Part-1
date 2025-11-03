@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Code Attribution
+  <!--Code Attribution
     Author: John Doe
     Title: Html Introduction
     Date Published: 2025-07-28
     Link/URL: https://www.geeksforgeeks.org/html/html-introduction/
     Date accessed: 2025-08-25
-    -->
+  -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Read inspiring success stories from GreenSteps Community Gardens across South Africa. Discover how urban farming transforms communities in Khayelitsha, Stellenbosch, and KwaZulu-Natal through food security and sustainable agriculture.">
-  <meta name="keywords" content="community garden success stories, urban farming impact, food security South Africa, Khayelitsha garden, school garden results, community transformation, sustainable agriculture stories, Cape Town community gardens">
-  <meta name="author" content="GreenSteps Community Gardens">
-  <meta name="robots" content="index, follow">
-  
-  <title>Impact Stories & Success Stories - GreenSteps Community Gardens | Real Community Transformation</title>
+  <title>GreenSteps Community Gardens | Impact Stories</title>
   <link rel="stylesheet" href="css-assets/style.css">
+
+  <!-- SEO -->
+  <meta name="description" content="Read inspiring impact stories from GreenSteps Community Gardens — empowering communities across South Africa through sustainable food initiatives.">
+  <meta name="keywords" content="impact, community success, sustainability, food security, South Africa, nonprofit, GreenSteps">
+  <meta name="author" content="GreenSteps Community Gardens">
 </head>
+
 <body>
   <!-- ================== HEADER ================== -->
   <header>
-    <h1>🌱 GreenSteps Community Gardens</h1>
-
-    <!--Code Attribution
-    Author: John Doe
-    Title: Understanding HTML Navigation
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-nav-tag/
-    Date accessed: 2025-08-25
-    -->
-
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
+    <h1>GreenSteps Community Gardens</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -51,205 +34,52 @@
         <li><a href="resources.html">Resources</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="header-search">
+        <input id="searchInput" type="search" placeholder="Search stories..." aria-label="Search site">
+      </div>
     </nav>
   </header>
 
   <!-- ================== MAIN CONTENT ================== -->
   <main>
-    <section id="impact">
+    <section>
       <h2>Impact Stories</h2>
-      <p>Real stories of transformation from communities we've worked with across South Africa. Click on any image to view it in full size.</p>
+      <p>Every garden tells a story. These communities have transformed vacant land into sustainable food sources — empowering families, schools, and rural cooperatives across South Africa.</p>
 
-      <div>
-        <!-- ===== Story 1: Khayelitsha ===== -->
-        <div class="impact-story">
-          <img src="https://img.freepik.com/premium-photo/urban-oasis-thriving-community-garden-amidst-city-skylines_818261-34368.jpg" 
-               alt="Thriving urban community garden oasis with abundant vegetables in Khayelitsha township with residential houses in background" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>🌾 Khayelitsha Community Garden</h3>
-          <p>What started as a vacant lot filled with debris has been transformed into a thriving garden that now feeds 120 families daily. The garden produces over 500kg of fresh vegetables weekly, creating food security in an area where fresh produce was previously unaffordable.</p>
-          <blockquote>"Before GreenSteps, we struggled to afford fresh vegetables. Now we grow our own organic produce and even sell surplus at the local market, providing income for 15 families." <cite>— Nomsa Mthembu, Garden Coordinator</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>120 families receive fresh vegetables weekly</li>
-            <li>15 permanent jobs created</li>
-            <li>R45,000 monthly income from market sales</li>
-            <li>70% reduction in household food costs</li>
-          </ul>
-        </div>
+      <!-- ===== Story 1 ===== -->
+      <article class="card" data-searchable>
+        <img src="https://img.freepik.com/premium-photo/urban-oasis-thriving-community-garden-amidst-city-skylines_818261-34368.jpg"
+             alt="Thriving urban community garden with township houses in background" width="400" height="250">
+        <h3>Khayelitsha Community Garden</h3>
+        <p>What started as a vacant lot has become a thriving garden feeding 120 families. “Before GreenSteps, we struggled to afford fresh vegetables. Now we grow our own and even sell surplus at the local market,” says garden coordinator Nomsa Mthembu.</p>
+        <p><strong>Impact:</strong> 120 families fed, 15 permanent jobs created.</p>
+      </article>
 
-        <!-- ===== Story 2: Stellenbosch Primary ===== -->
-        <div class="impact-story">
-          <img src="https://th.bing.com/th/id/R.0961e6986fcba16286bd249d23596206?rik=nZPMoyAkFMiEiA&pid=ImgRaw&r=0" 
-               alt="Happy primary school children harvesting fresh organic vegetables from educational school garden learning nutrition" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>📚 Stellenbosch Primary School</h3>
-          <p>The school's educational vegetable garden now supplies the feeding scheme with fresh, nutritious produce daily, benefiting 300 learners. Children actively participate in planting, maintaining, and harvesting crops, learning valuable lessons about nutrition, biology, and environmental stewardship.</p>
-          <blockquote>"The garden has transformed our school. Children who were previously picky eaters now enjoy vegetables because they grew them themselves. Academic performance in science has improved dramatically." <cite>— Mrs. Sarah van der Merwe, Principal</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>300 students receive fresh vegetables daily</li>
-            <li>50% improvement in nutrition education test scores</li>
-            <li>R12,000 monthly savings on food purchases</li>
-            <li>25% increase in science grades</li>
-            <li>100% student participation in garden activities</li>
-          </ul>
-        </div>
+      <!-- ===== Story 2 ===== -->
+      <article class="card" data-searchable>
+        <img src="https://th.bing.com/th/id/R.0961e6986fcba16286bd249d23596206?rik=nZPMoyAkFMiEiA&pid=ImgRaw&r=0"
+             alt="Primary school children harvesting vegetables from school garden" width="400" height="250">
+        <h3>Stellenbosch Primary School</h3>
+        <p>The school's vegetable garden now supplies the feeding scheme with fresh produce daily. Children learn about nutrition while tending to crops, improving both their health and academic performance.</p>
+        <p><strong>Impact:</strong> 300 students benefiting, 50% improvement in nutrition education scores.</p>
+      </article>
 
-        <!-- ===== Story 3: Drakensberg Rural Cooperative ===== -->
-        <div class="impact-story">
-          <img src="https://thumbs.dreamstime.com/b/lush-terraced-farmland-verdant-mountain-landscape-vegetables-352967477.jpg" 
-               alt="Lush terraced community farmland with abundant vegetable crops in verdant rural Drakensberg mountain landscape" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>⛰️ Drakensberg Rural Cooperative</h3>
-          <p>In the rural mountains of KwaZulu-Natal, five previously isolated villages now collaborate managing communal terraced gardens using traditional and modern techniques. This cooperative approach has created a sustainable model for rural food security and economic development.</p>
-          <blockquote>"The cooperative garden project brought our villages together. We share knowledge, resources, and harvests. For the first time in years, our children have regular access to fresh vegetables." <cite>— Chief Thulani Dlamini, Community Leader</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>5 villages connected through cooperation</li>
-            <li>200 households achieved food security</li>
-            <li>70% reduction in food insecurity</li>
-            <li>R80,000 collective annual income from produce sales</li>
-            <li>30 employment opportunities created</li>
-            <li>Traditional farming knowledge preserved and enhanced</li>
-          </ul>
-        </div>
-
-        <!-- ===== Story 4: Soweto Youth Garden ===== -->
-        <div class="impact-story">
-          <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=400&h=250&fit=crop" 
-               alt="Young people working together in vibrant Soweto urban garden growing vegetables and building community" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>👨‍🌾 Soweto Youth Garden Project</h3>
-          <p>A youth-led initiative that transformed an abandoned sports field into a productive urban farm. Young people aged 18-25 learn entrepreneurship, agriculture, and leadership skills while growing organic vegetables for their community.</p>
-          <blockquote>"This garden gave me purpose and a future. I went from being unemployed to running my own small vegetable business." <cite>— Sipho Mokoena, 23, Youth Garden Manager</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>25 young people employed</li>
-            <li>80 families served weekly</li>
-            <li>15 youth-owned micro-businesses established</li>
-            <li>90% youth retention rate</li>
-          </ul>
-        </div>
-
-        <!-- ===== Story 5: Mitchell's Plain Senior Center ===== -->
-        <div class="impact-story">
-          <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=250&fit=crop" 
-               alt="Senior citizens tending community garden together promoting health and social connection" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>👵 Mitchell's Plain Senior Garden</h3>
-          <p>A therapeutic garden for seniors that promotes physical activity, mental health, and social connection. Elderly participants grow vegetables, herbs, and flowers while enjoying outdoor exercise and community engagement.</p>
-          <blockquote>"Gardening has given me a reason to wake up each morning. My doctor says my blood pressure has improved, and I've made wonderful friends." <cite>— Mrs. Patricia Johnson, 72, Garden Member</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>45 senior participants</li>
-            <li>60% improvement in reported well-being</li>
-            <li>Reduced social isolation by 75%</li>
-            <li>Fresh produce for 45 households</li>
-          </ul>
-        </div>
-
-        <!-- ===== Story 6: Durban Coastal Community ===== -->
-        <div class="impact-story">
-          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=250&fit=crop" 
-               alt="Coastal community garden with ocean views demonstrating sustainable urban farming near Durban beach" 
-               class="gallery-image" 
-               width="400" 
-               height="250"
-               loading="lazy">
-          <h3>🌊 Durban Coastal Garden</h3>
-          <p>An innovative coastal garden that uses sustainable practices adapted for sandy soil and high humidity. The project demonstrates that productive gardens can thrive in challenging coastal environments.</p>
-          <blockquote>"We never thought we could grow vegetables near the beach. GreenSteps taught us techniques that work with our unique climate." <cite>— Rajesh Pillay, Garden Founder</cite></blockquote>
-          <p><strong>Measurable Impact:</strong></p>
-          <ul>
-            <li>90 families supplied with fresh produce</li>
-            <li>Innovative salt-tolerant crop varieties introduced</li>
-            <li>Model for other coastal communities</li>
-            <li>20 permanent jobs created</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Overall Statistics Section -->
-      <div class="overall-stats" style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #7cb342 0%, #689f38 100%); border-radius: 10px; color: white;">
-        <h3 style="text-align: center; color: white; border: none;">Our Combined Impact Across All Gardens</h3>
-        <div class="stats-grid" style="margin-top: 2rem;">
-          <div style="text-align: center;">
-            <h4 style="font-size: 3rem; color: white;">1,000+</h4>
-            <p style="color: white;">Families Fed Weekly</p>
-          </div>
-          <div style="text-align: center;">
-            <h4 style="font-size: 3rem; color: white;">150+</h4>
-            <p style="color: white;">Jobs Created</p>
-          </div>
-          <div style="text-align: center;">
-            <h4 style="font-size: 3rem; color: white;">R2.5M</h4>
-            <p style="color: white;">Annual Community Income</p>
-          </div>
-          <div style="text-align: center;">
-            <h4 style="font-size: 3rem; color: white;">75%</h4>
-            <p style="color: white;">Food Security Improvement</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Call to Action -->
-      <div style="text-align: center; margin-top: 3rem;">
-        <h3>Want to Create Similar Impact in Your Community?</h3>
-        <p>Join our growing network of successful community gardens.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="cta-primary">Start Your Garden</a>
-          <a href="programs.html" class="cta-secondary">View Programs</a>
-        </div>
-      </div>
+      <!-- ===== Story 3 ===== -->
+      <article class="card" data-searchable>
+        <img src="https://thumbs.dreamstime.com/b/lush-terraced-farmland-verdant-mountain-landscape-vegetables-352967477.jpg"
+             alt="Rural mountain landscape with terraced community gardens" width="400" height="250">
+        <h3>Drakensberg Rural Cooperative</h3>
+        <p>In the rural mountains of KwaZulu-Natal, five villages now work together managing communal gardens. The initiative has reduced food insecurity by 70% and created a model for rural cooperation.</p>
+        <p><strong>Impact:</strong> 5 villages connected, 200 households food secure.</p>
+      </article>
     </section>
   </main>
 
   <!-- ================== FOOTER ================== -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="programs.html">Our Programs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Connect With Us</h4>
-        <p>📧 <a href="mailto:info@greensteps.org.za">info@greensteps.org.za</a></p>
-        <p>📞 <a href="tel:+27214487890">+27 (0)21 448 7890</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Twitter">TW</a>
-          <a href="#" aria-label="Instagram">IG</a>
-        </div>
-      </div>
-    </div>
-    <p class="copyright">&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
-    <p class="registration">Non-Profit Registration: NPO 123-456 | PBO 930012345</p>
+    <p>&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for interactive features and lightbox -->
-  <script src="js/script.js"></script>
+  <script src="js-assets/scripts.js"></script>
 </body>
 </html>

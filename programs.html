@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Code Attribution
+  <!--Code Attribution
     Author: John Doe
     Title: Html Introduction
     Date Published: 2025-07-28
     Link/URL: https://www.geeksforgeeks.org/html/html-introduction/
     Date accessed: 2025-08-25
-    -->
+  -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore GreenSteps Community Gardens programs: garden establishment, skills training, school partnerships, sustainability initiatives, and market access. Free workshops across South Africa in urban farming and organic agriculture.">
-  <meta name="keywords" content="community garden programs, urban farming training, school garden partnership, sustainability workshops, organic farming courses, composting training South Africa, permaculture education, food security programs">
-  <meta name="author" content="GreenSteps Community Gardens">
-  <meta name="robots" content="index, follow">
-  
-  <title>Community Garden Programs & Training - GreenSteps South Africa | Sustainability Workshops</title>
+  <title>GreenSteps Community Gardens | Programs</title>
   <link rel="stylesheet" href="css-assets/style.css">
+
+  <!-- SEO -->
+  <meta name="description" content="Explore GreenSteps programs supporting community gardens, education, sustainability, and market access across South Africa.">
+  <meta name="keywords" content="community programs, GreenSteps, gardening, South Africa, environmental sustainability">
+  <meta name="author" content="GreenSteps Community Gardens">
 </head>
+
 <body>
   <!-- ================== HEADER ================== -->
   <header>
-    <h1>🌱 GreenSteps Community Gardens</h1>
-
-    <!--Code Attribution
-    Author: John Doe
-    Title: Understanding HTML Navigation
-    Date Published: 2025-07-28
-    Link/URL: https://www.geeksforgeeks.org/html/html-nav-tag/
-    Date accessed: 2025-08-25
-    -->
-
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
+    <h1>GreenSteps Community Gardens</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -51,6 +34,9 @@
         <li><a href="resources.html">Resources</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="header-search">
+        <input id="searchInput" type="search" placeholder="Search site (e.g., workshops, training)" aria-label="Search site">
+      </div>
     </nav>
   </header>
 
@@ -58,134 +44,63 @@
   <main>
     <section>
       <h2>Our Programs</h2>
-      <p>GreenSteps offers comprehensive programs to support community gardens from inception to sustainability. All our programs are free for registered community groups.</p>
+      <p>GreenSteps runs multiple programs that help communities establish and sustain thriving gardens, teach practical skills, and promote eco-friendly practices.</p>
 
-      <!-- Dynamic Search Feature -->
-      <div class="search-box">
-        <input 
-          type="search" 
-          id="program-search" 
-          placeholder="🔍 Search programs... (e.g., training, school, market)"
-          aria-label="Search programs">
-      </div>
+      <!-- ===== Program 1: Garden Establishment ===== -->
+      <article class="card" data-searchable>
+        <img src="https://img.freepik.com/premium-photo/closeup-farmers-hands-planting-seeds-rich-soil-rows-crops-visible-focusing-con_176550-2128.jpg"
+             alt="Hands planting seeds in rich soil" width="400" height="300">
+        <h3>Garden Establishment</h3>
+        <p>We help communities identify suitable land, conduct soil tests, and establish productive gardens from the ground up. Our team provides site preparation, irrigation setup, and initial planting guidance.</p>
+      </article>
 
-      <div>
-        <!-- ===== Program 1: Garden Establishment ===== -->
-        <div>
-          <img src="https://img.freepik.com/premium-photo/closeup-farmers-hands-planting-seeds-rich-soil-rows-crops-visible-focusing-con_176550-2128.jpg" 
-               alt="Close-up of hands planting organic seeds in nutrient-rich dark soil with visible crop rows" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>🌱 Garden Establishment</h3>
-          <p>We help communities identify suitable land, conduct professional soil tests, and establish productive gardens from the ground up. Our experienced team provides comprehensive site preparation, efficient irrigation setup, and initial planting guidance to ensure your garden thrives from day one.</p>
-          <p><strong>Includes:</strong> Site assessment, soil testing, irrigation design, initial seedlings, and tools.</p>
-        </div>
-        
-        <!-- ===== Program 2: Training & Workshops ===== -->
-        <div>
-          <img src="https://tse1.mm.bing.net/th/id/OIP.RzrMKh_Dx4aMYuHCtb95pQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" 
-               alt="Professional instructor teaching composting techniques to diverse group of community members outdoors" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>👩‍🌾 Skills Training Workshops</h3>
-          <p>Monthly hands-on workshops covering organic composting methods, integrated pest management, seasonal planting calendars, and efficient harvesting techniques. All training is conducted in local languages by certified agricultural instructors with years of practical experience.</p>
-          <p><strong>Topics:</strong> Composting, pest control, crop rotation, water management, seed saving, and organic certification.</p>
-        </div>
-        
-        <!-- ===== Program 3: School Garden Partnerships ===== -->
-        <div>
-          <img src="https://tse3.mm.bing.net/th/id/OIP.nu-1pgEKwsmBtobJZVjXRQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" 
-               alt="Children learning about fresh vegetables and nutrition education in vibrant school garden setting" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>🏫 School Garden Program</h3>
-          <p>Educational gardens in schools teach children about nutrition, environmental science, and sustainable food production while providing fresh organic vegetables for school feeding schemes. We integrate garden activities into the curriculum to enhance learning across multiple subjects.</p>
-          <p><strong>Benefits:</strong> Nutrition education, hands-on science learning, fresh produce for learners, and environmental awareness.</p>
-        </div>
+      <!-- ===== Program 2: Skills Training Workshops ===== -->
+      <article class="card" data-searchable>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.RzrMKh_Dx4aMYuHCtb95pQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Instructor teaching composting techniques to community members" width="400" height="300">
+        <h3>Skills Training Workshops</h3>
+        <p>Monthly workshops covering composting, pest management, seasonal planting, and harvesting techniques. All training is conducted in local languages by certified instructors.</p>
+      </article>
 
-        <!-- ===== Program 4: Sustainability Initiatives ===== -->
-        <div>
-          <img src="https://tse4.mm.bing.net/th/id/OIP.1-ZUMdUD_RD7V6FHjt1OYwHaEJ?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3" 
-               alt="Rainwater harvesting system with collection tanks in community garden demonstrating sustainable water conservation" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>💧 Sustainability Initiatives</h3>
-          <p>Advanced water conservation systems including rainwater harvesting, drip irrigation, and greywater recycling. We also provide renewable energy solutions such as solar pumps and implement comprehensive waste reduction programs to help gardens operate sustainably and minimize environmental impact.</p>
-          <p><strong>Features:</strong> Rainwater tanks, solar irrigation, composting systems, and zero-waste practices.</p>
-        </div>
+      <!-- ===== Program 3: School Garden Partnerships ===== -->
+      <article class="card" data-searchable>
+        <img src="https://tse3.mm.bing.net/th/id/OIP.nu-1pgEKwsmBtobJZVjXRQHaFj?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Children learning about vegetables in school garden" width="400" height="300">
+        <h3>School Garden Program</h3>
+        <p>Educational gardens in schools teach children about nutrition, environmental science, and food production while providing fresh vegetables for school feeding schemes.</p>
+      </article>
 
-        <!-- ===== Program 5: Market Access ===== -->
-        <div>
-          <img src="https://img.freepik.com/premium-photo/fresh-vegetables-displayed-local-market_118478-6588.jpg" 
-               alt="Fresh organic vegetables beautifully displayed at local farmers market stall for community sale" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>🛒 Market Access Program</h3>
-          <p>We connect successful community gardens with local markets, restaurants, and distribution networks to create sustainable income opportunities for community members. Our program includes business skills training, quality control guidance, and ongoing market linkage support.</p>
-          <p><strong>Services:</strong> Market connections, pricing guidance, packaging support, and entrepreneurship training.</p>
-        </div>
+      <!-- ===== Program 4: Sustainability Initiatives ===== -->
+      <article class="card" data-searchable>
+        <img src="https://tse4.mm.bing.net/th/id/OIP.1-ZUMdUD_RD7V6FHjt1OYwHaEJ?cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3"
+             alt="Rainwater collection system in community garden" width="400" height="300">
+        <h3>Sustainability Initiatives</h3>
+        <p>Water conservation systems, renewable energy solutions, and waste reduction programs help gardens operate sustainably and reduce environmental impact.</p>
+      </article>
 
-        <!-- ===== Program 6: Digital Support ===== -->
-        <div>
-          <img src="https://img.freepik.com/premium-photo/person-using-smart-phone-garden_666034-613.jpg" 
-               alt="Farmer using smartphone mobile app to access gardening information and agricultural guidance in field" 
-               width="400" 
-               height="300"
-               loading="lazy">
-          <h3>📱 Digital Support Platform</h3>
-          <p>Our mobile-friendly digital platform provides instant access to resources, seasonal planting alerts, weather updates, and virtual consultations with agricultural experts. Gardeners stay connected and informed throughout the entire growing season with 24/7 support.</p>
-          <p><strong>Features:</strong> Mobile app, WhatsApp support groups, video tutorials, and online expert consultations.</p>
-        </div>
-      </div>
+      <!-- ===== Program 5: Market Access ===== -->
+      <article class="card" data-searchable>
+        <img src="https://img.freepik.com/premium-photo/fresh-vegetables-displayed-local-market_118478-6588.jpg"
+             alt="Fresh vegetables displayed at local farmers market" width="400" height="300">
+        <h3>Market Access Program</h3>
+        <p>Connecting successful gardens with local markets, restaurants, and distribution networks to create income opportunities for community members.</p>
+      </article>
 
-      <!-- Call to Action -->
-      <div class="cta-section" style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e9 100%); border-radius: 10px;">
-        <h3>Ready to Start Your Community Garden?</h3>
-        <p>Join over 50 successful community gardens across South Africa. Get in touch to learn how we can support your project.</p>
-        <div class="cta-buttons" style="margin-top: 1.5rem;">
-          <a href="contact.html" class="cta-primary">Apply for a Program</a>
-          <a href="resources.html" class="cta-secondary">Download Resources</a>
-        </div>
-      </div>
+      <!-- ===== Program 6: Digital Support Platform ===== -->
+      <article class="card" data-searchable>
+        <img src="https://img.freepik.com/premium-photo/person-using-smart-phone-garden_666034-613.jpg"
+             alt="Person using mobile phone to access gardening app in field" width="400" height="300">
+        <h3>Digital Support Platform</h3>
+        <p>Mobile-friendly resources, seasonal alerts, and virtual consultations keep gardeners connected and informed throughout the growing season.</p>
+      </article>
     </section>
   </main>
 
   <!-- ================== FOOTER ================== -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="programs.html">Our Programs</a></li>
-          <li><a href="impact.html">Impact Stories</a></li>
-          <li><a href="resources.html">Resources</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Connect With Us</h4>
-        <p>📧 <a href="mailto:info@greensteps.org.za">info@greensteps.org.za</a></p>
-        <p>📞 <a href="tel:+27214487890">+27 (0)21 448 7890</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Twitter">TW</a>
-          <a href="#" aria-label="Instagram">IG</a>
-        </div>
-      </div>
-    </div>
-    <p class="copyright">&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
-    <p class="registration">Non-Profit Registration: NPO 123-456 | PBO 930012345</p>
+    <p>&copy; 2025 GreenSteps Community Gardens. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for interactive features -->
-  <script src="js/script.js"></script>
+  <script src="js-assets/scripts.js"></script>
 </body>
 </html>
